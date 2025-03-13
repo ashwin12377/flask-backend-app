@@ -18,16 +18,10 @@ This is a simple Flask app that interacts with a MySQL database. The app allows 
    docker pull ashwin369/flask-backend-app:latest
    ```
 
-2. Clone or download docker-compose.yml file from this repository:
+2. Download docker-compose.yml file from this repository:
 
    ```bash
-   wget url
-   ```
-
-3. On successfull pulling the image & docker-compose.yaml file:
-
-   ```bash
-   Start the containers
+   wget https://github.com/ashwin12377/flask-backend-app/blob/main/docker-compose.yml
    ```
 
 ## Usage
@@ -65,7 +59,7 @@ docker build -t flaskapp .
 
 - Now, make sure that you have created a network using following command
 ```bash
-docker network create twotier
+docker network create  -d bridge flaskapp-ntwk
 ```
 
 - Attach both the containers in the same network, so that they can communicate with each other
@@ -95,9 +89,8 @@ docker run -d \
     flaskapp:latest
 
 ```
-3. Create the `messages` table in your MySQL database ( if not exist ):
-
-   - Use a MySQL client or tool (e.g., phpMyAdmin) to execute the following SQL commands:
+3. Create the `messages` table in your MySQL database ( if table not exist ):
+- Use a MySQL client or tool (e.g., phpMyAdmin) to execute the following SQL commands:
    
      ```sql
      CREATE TABLE messages (
@@ -105,3 +98,4 @@ docker run -d \
          message TEXT
      );
      ```
+
