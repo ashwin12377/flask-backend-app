@@ -91,11 +91,11 @@ docker run -d \
 ```
 3. Create the `messages` table in your MySQL database ( if table not exist ):
 - Use a MySQL client or tool (e.g., phpMyAdmin) to execute the following SQL commands:
-   
-     ```sql
+```sql
      CREATE TABLE messages (
          id INT AUTO_INCREMENT PRIMARY KEY,
          message TEXT
      );
-     ```
+     ```   
+     
 
