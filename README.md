@@ -1,5 +1,3 @@
-<<<<<<< HEAD <<<<<<<
-
 # Flask App with MySQL Docker Setup
 Docker integration with Flask and Mysql
 
