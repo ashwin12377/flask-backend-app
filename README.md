@@ -7,38 +7,27 @@ This is a simple Flask app that interacts with a MySQL database. The app allows 
 
 ## Prerequisites
 
-Before you begin, make sure you have the following installed:
-
 - Docker
 - Git (optional, for cloning the repository)
 
 ## Setup
 
-1. Clone this repository (if you haven't already):
+1. Pull form Docker Hub or Clone this repository:
 
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   docker pull ashwin369/flask-backend-app:latest
    ```
 
-2. Navigate to the project directory:
+2. Clone or download docker-compose.yml file from this repository:
 
    ```bash
-   cd your-repo-name
+   wget url
    ```
 
-3. Create a `.env` file in the project directory to store your MySQL environment variables:
+3. On successfull pulling the image & docker-compose.yaml file:
 
    ```bash
-   touch .env
-   ```
-
-4. Open the `.env` file and add your MySQL configuration:
-
-   ```
-   MYSQL_HOST=mysql
-   MYSQL_USER=your_username
-   MYSQL_PASSWORD=your_password
-   MYSQL_DB=your_database
+   Start the containers
    ```
 
 ## Usage
@@ -46,24 +35,13 @@ Before you begin, make sure you have the following installed:
 1. Start the containers using Docker Compose:
 
    ```bash
-   docker-compose up --build
+   docker compose up -d
    ```
 
 2. Access the Flask app in your web browser:
 
    - Frontend: http://localhost
    - Backend: http://localhost:5000
-
-3. Create the `messages` table in your MySQL database:
-
-   - Use a MySQL client or tool (e.g., phpMyAdmin) to execute the following SQL commands:
-   
-     ```sql
-     CREATE TABLE messages (
-         id INT AUTO_INCREMENT PRIMARY KEY,
-         message TEXT
-     );
-     ```
 
 4. Interact with the app:
 
@@ -72,13 +50,13 @@ Before you begin, make sure you have the following installed:
 
 ## Cleaning Up
 
-To stop and remove the Docker containers, press `Ctrl+C` in the terminal where the containers are running, or use the following command:
+To stop and remove the Docker containers use the following command:
 
 ```bash
 docker-compose down
 ```
 
-## To run this two-tier application using  without docker-compose
+## To run this application using  without docker-compose (manually)
 
 - First create a docker image from Dockerfile
 ```bash
@@ -117,3 +95,13 @@ docker run -d \
     flaskapp:latest
 
 ```
+3. Create the `messages` table in your MySQL database ( if not exist ):
+
+   - Use a MySQL client or tool (e.g., phpMyAdmin) to execute the following SQL commands:
+   
+     ```sql
+     CREATE TABLE messages (
+         id INT AUTO_INCREMENT PRIMARY KEY,
+         message TEXT
+     );
+     ```
